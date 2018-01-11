@@ -1,0 +1,15 @@
+{
+	"description": "<p>Icecast directory -- streams & radios<p>For more information, visit <a href=\"http://dir.xiph.org\">http://dir.xiph.org</a>",
+	"author": "Henrik Andersson, lprot",
+	"homepage": "http://github.com/lprot/movian-plugin-icecast",
+	"title": "Icecast",
+	"synopsis": "Icecast directory -- streams & radios",
+	"version": "0.5.1",
+	"file": "icecast.js",
+	"showtimeVersion": "4.8",
+	"type": "ecmascript",
+	"id": "icecast",
+	"icon": "logo.svg",
+	"category": "music",
+        "apiversion": 2
+}
