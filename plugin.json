@@ -4,7 +4,7 @@
 	"homepage": "http://github.com/lprot/movian-plugin-icecast",
 	"title": "Icecast",
 	"synopsis": "Icecast directory -- streams & radios",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"file": "icecast.js",
 	"showtimeVersion": "4.8",
 	"type": "ecmascript",

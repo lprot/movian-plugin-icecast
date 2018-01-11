@@ -28,7 +28,7 @@ var logo = Plugin.path + plugin.icon;
 
 var BASE_URL = "http://dir.xiph.org";
 
- RichText = function(x) {
+RichText = function(x) {
     this.str = x.toString();
 }
 
@@ -85,10 +85,10 @@ function addToMyFavorites(item) {
             station: item.station,
             description: item.description,
             format: item.format,
-            bitrate: this.bitrate
+            bitrate: item.bitrate
         });
         store.list = JSON.stringify([entry].concat(eval(store.list)));
-        popup.notify("'" + this.station + "' has been added to My Favorites.", 2);
+        popup.notify("'" + item.station + "' has been added to My Favorites.", 2);
     });
 }
 
@@ -127,7 +127,7 @@ function scrape_page(page, url, noReq, searcher) {
             itemmd.bitrate = match[1].match(/<p class="format" title="([\S\s]*?)">/)[1];
             itemmd.format = match[1].match(/<p class="format"[\S\s]*?class="no-link" title="[\S\s]*?">([\S\s]*?)<span/)[1];
 
-	    var item = page.appendItem('icecast:' + BASE_URL + itemmd.url, "station", {
+	    var item = page.appendItem('icecast:' + BASE_URL + itemmd.url, 'station', {
 	        title: new RichText(itemmd.station + coloredStr(' ' + itemmd.format + ' ' + itemmd.bitrate, orange) +
                     ' ' + coloredStr(itemmd.listeners, green)),
                 station: itemmd.station,
