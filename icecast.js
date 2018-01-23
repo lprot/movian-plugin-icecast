@@ -93,6 +93,9 @@ function addToMyFavorites(item) {
 }
 
 function scrape_page(page, url, noReq, searcher) {
+    if (searcher)
+       setPageHeader(page, plugin.title);
+
     page.entries = 0;
     var nextPage = '', tryToSearch = true;
 
@@ -296,11 +299,9 @@ new page.Route(plugin.id + ":start", function(page) {
 });
 
 new page.Route(plugin.id + ":search:(.*)", function(page, query) {
-    setPageHeader(page, plugin.synopsis + ' - ' + query);
     scrape_page(page, BASE_URL + "/search?search=" + encodeURI(query), 0 , 1);
 });
 
 page.Searcher(plugin.title, logo, function(page, query) {
-    setPageHeader(page, plugin.synopsis + ' - ' + query);
     scrape_page(page, BASE_URL + "/search?search=" + encodeURI(query), 0 , 1);
 });
